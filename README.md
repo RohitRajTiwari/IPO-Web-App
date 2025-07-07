@@ -7,7 +7,7 @@ This project is a full-stack Django + React-based IPO management system develope
 ---
 | Name                 | Role                            | GitHub Profile                                            |
 | -------------------- | ------------------------------- | --------------------------------------------------------- |
-| **Rohit Raj Tiwari** | Frontend Developer              | https://github.com/RohitRajTiwari/Bluestocks-t3 |
+| **Rohit Raj Tiwari** | Frontend Developer              | https://github.com/RohitRajTiwari |
 | **Astha Dahiya**     | Team Leader & Backend Developer | (https://github.com/Astha2004-a)                  |
 
 
