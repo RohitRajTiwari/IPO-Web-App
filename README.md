@@ -3,6 +3,7 @@ IPO WEB APPLICATION BY BLUESTOCK FINTECH
 # 🧾 Bluestock IPO Web App
 
 This project is a full-stack Django + React-based IPO management system developed for Bluestock Fintech.
+This project was created by ASTHA DAHIYA and ROHIT RAJ TIWARI
 
 ---
 | Name                 | Role                            | GitHub Profile                                            |
@@ -11,50 +12,72 @@ This project is a full-stack Django + React-based IPO management system develope
 | **Astha Dahiya**     | Team Leader & Backend Developer | (https://github.com/Astha2004-a)                  |
 
 
+# IPO Web Application
 
-Setup PostgreSQL Database
-✅ Prerequisite: Install PostgreSQL
-Download and install PostgreSQL from the official website:
-👉 https://www.postgresql.org/download/
+## **Introduction**
+This project is developed for **Bluestock Fintech** as part of a production-level software development Intern. The IPO Web Application provides IPO-related information for the Bluestock website/app and clients’ platforms. This project aims to give interns handson experience with industry-standard web development practices.
 
-✅ Create Database and User
-Open PostgreSQL terminal (psql) and run:
-CREATE DATABASE bluestock;
-CREATE USER daiyanalam WITH PASSWORD '12345';
-ALTER ROLE daiyanalam SET client_encoding TO 'utf8';
-ALTER ROLE daiyanalam SET default_transaction_isolation TO 'read committed';
-ALTER ROLE daiyanalam SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE bluestock TO daiyanalam;
+## **Objective**
+The web application and its REST API offer essential IPO details to the public, including:
+- **Company Logo** (placeholder image)
+- **Company Name**
+- **Price Band**
+- **Opening and Closing Dates**
+- **Issue Size**
+- **Issue Type**
+- **Listing Date**
+- **Status**
+- **IPO Price**
+- **Listing Price**
+- **Listing Gain**
+- **Current Market Price (CMP)**
+- **Current Return**
+- **Downloadable RHP and DRHP PDFs**
 
+## **ER Diagram Overview**
+### **Entities**
+- **Companies**
+  - `ID`
+  - `Name`
+  - `Logo URL`
 
- Install PostgreSQL Adapter for Python
+- **IPOs**
+  - `ID`
+  - `Company ID`
+  - `Price Band`
+  - `Dates (Open/Close, Listing)`
+  - `Prices (IPO Price, Listing Price, CMP)`
+  - `Status`
+  - `Return`
 
- pip install psycopg2-binary
+- **Documents**
+  - `ID`
+  - `IPO ID`
+  - `RHP`
+  - `DRHP`
 
+### **Relationships**
+- **One Company ➝ Many IPOs** *(Cascade Delete)*
+- **One IPO ➝ Many Documents** *(Cascade Delete)*
 
-Configure Django to use PostgreSQL
+## **Technology Stack**
+### **Backend (Python Django)**
+- **Language:** Python 3.12.3
+- **Framework:** Django 5.0.6
+- **API:** Django REST Framework
+- **Database:** PostgreSQL
+- **Auth:** Django Built-in / JWT
 
-In bluestock/settings.py, update the DATABASES section:
+### **Frontend (React + Tailwind CSS)**
+- **Framework:** React.js
+- **Styling:** Tailwind CSS
+- **Routing:** React Router
+- **Component Library:** Headless UI / Custom
+- **Build Tool:** Vite / Webpack
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bluestock',
-        'USER': 'daiyanalam',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
-Run Migrations and Start Server
-
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py createsuperuser
-python3 manage.py runserver
-
-
-
-
-
+## **Project Features**
+- **Company & IPO Listings** with detailed filtering options
+- **Real-time IPO Data** including Price Band, CMP, Returns
+- **Document Downloading** (**RHP** & **DRHP** PDFs)
+- **Authentication System** using JWT
+- **Responsive UI** optimized with Tailwind CSS
